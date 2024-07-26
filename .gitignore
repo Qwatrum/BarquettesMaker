@@ -14,3 +14,9 @@ export_presets.cfg
 .godot/editor/project_metadata.cfg
 
 .godot/uid_cache.bin
+
+.godot/editor/editor_layout.cfg
+
+.godot/editor/favorites.Node
+
+.godot/editor/favorites

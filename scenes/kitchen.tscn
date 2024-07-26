@@ -1,0 +1,88 @@
+[gd_scene load_steps=13 format=3 uid="uid://ccbcv06obavin"]
+
+[ext_resource type="Script" path="res://scenes/kitchen.gd" id="1_2d51u"]
+[ext_resource type="Texture2D" uid="uid://b5agcaprp5ukk" path="res://assets/Background.png" id="1_qw3v2"]
+[ext_resource type="Texture2D" uid="uid://ogyqna52omje" path="res://assets/shelf.png" id="2_73gpo"]
+[ext_resource type="Texture2D" uid="uid://cyvwv4acerh0" path="res://assets/table.png" id="3_lk741"]
+[ext_resource type="Texture2D" uid="uid://dkb7egfu4ahwg" path="res://assets/text.png" id="4_0c1yu"]
+[ext_resource type="Texture2D" uid="uid://di7u7p8bykfuu" path="res://assets/bowl_s.png" id="6_hnvb7"]
+[ext_resource type="PackedScene" uid="uid://cbp00el2rngwc" path="res://scenes/jar_strawberry.tscn" id="7_xlboq"]
+[ext_resource type="PackedScene" uid="uid://bt504crafw2lc" path="res://scenes/jar_blue.tscn" id="8_u1lpo"]
+[ext_resource type="PackedScene" uid="uid://dkd08stdg06h7" path="res://scenes/jar_cherry.tscn" id="9_66l50"]
+[ext_resource type="PackedScene" uid="uid://cn5fah2ffm3xn" path="res://scenes/jar_peach.tscn" id="10_bv8o1"]
+[ext_resource type="PackedScene" uid="uid://hghrsdhala0s" path="res://scenes/jar_choc.tscn" id="11_py71x"]
+[ext_resource type="PackedScene" uid="uid://di5vnb6330uvk" path="res://scenes/jar_peanut.tscn" id="12_n6n1j"]
+
+[node name="Kitchen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2d51u")
+
+[node name="Background" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_qw3v2")
+stretch_mode = 1
+
+[node name="Shelf" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(170, 174)
+scale = Vector2(2.8, 2.8)
+texture = ExtResource("2_73gpo")
+
+[node name="Table" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(604, 566.875)
+scale = Vector2(10.0313, 4.11133)
+texture = ExtResource("3_lk741")
+
+[node name="Table_btn" type="TextureButton" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = -68.0
+offset_top = 306.0
+offset_right = 60.0
+offset_bottom = 434.0
+scale = Vector2(10, 4)
+texture_normal = ExtResource("3_lk741")
+
+[node name="Text" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(550, 485)
+scale = Vector2(7, 7)
+texture = ExtResource("4_0c1yu")
+
+[node name="Bowl" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(60, 255)
+texture = ExtResource("6_hnvb7")
+
+[node name="Jar_strawberry" parent="." instance=ExtResource("7_xlboq")]
+position = Vector2(54, 155)
+
+[node name="Jar_blue" parent="." instance=ExtResource("8_u1lpo")]
+position = Vector2(101, 154)
+
+[node name="Jar_cherry" parent="." instance=ExtResource("9_66l50")]
+position = Vector2(144, 154)
+
+[node name="Jar_peach" parent="." instance=ExtResource("10_bv8o1")]
+position = Vector2(187, 155)
+
+[node name="Jar_choclate" parent="." instance=ExtResource("11_py71x")]
+position = Vector2(235, 157)
+
+[node name="Jar_peanut" parent="." instance=ExtResource("12_n6n1j")]
+position = Vector2(279, 156)
+
+[connection signal="button_down" from="Table_btn" to="." method="_on_table_btn_button_down"]
