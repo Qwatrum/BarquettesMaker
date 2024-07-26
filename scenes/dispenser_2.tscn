@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://chiayr5yxcb17"]
+
+[ext_resource type="Script" path="res://scenes/dispenser_2.gd" id="1_0p8t7"]
+[ext_resource type="Texture2D" uid="uid://c1f4lod7ut8qo" path="res://assets/dispenser (3).png" id="2_8ykv4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1uok5"]
+radius = 6.5
+
+[node name="Dispenser_2" type="StaticBody2D"]
+scale = Vector2(2.2, 2.2)
+input_pickable = true
+script = ExtResource("1_0p8t7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_8ykv4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.5, 0)
+shape = SubResource("CapsuleShape2D_1uok5")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

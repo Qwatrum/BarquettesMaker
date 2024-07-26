@@ -1,19 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://dkd08stdg06h7"]
+[gd_scene load_steps=4 format=3 uid="uid://dkd08stdg06h7"]
 
+[ext_resource type="Script" path="res://scenes/jar_cherry.gd" id="1_dmtyj"]
 [ext_resource type="Texture2D" uid="uid://b3qekeopcj2yj" path="res://assets/jar_cherry.png" id="1_i0g0i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dvecf"]
 size = Vector2(34, 53)
 
-[node name="Jar_cherry" type="Node2D"]
+[node name="Jar_cherry" type="StaticBody2D"]
+input_pickable = true
+script = ExtResource("1_dmtyj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_i0g0i")
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_dvecf")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

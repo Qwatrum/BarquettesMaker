@@ -1,18 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://hghrsdhala0s"]
+[gd_scene load_steps=4 format=3 uid="uid://hghrsdhala0s"]
 
 [ext_resource type="Texture2D" uid="uid://bd18bqmyb4qv6" path="res://assets/choc_jar.png" id="1_5isnm"]
+[ext_resource type="Script" path="res://scenes/jar_choc.gd" id="1_wtyrq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dvecf"]
 size = Vector2(34, 53)
 
-[node name="Jar_choclate" type="Node2D"]
+[node name="Jar_choclate" type="StaticBody2D"]
+input_pickable = true
+script = ExtResource("1_wtyrq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 texture = ExtResource("1_5isnm")
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_dvecf")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

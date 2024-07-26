@@ -20,3 +20,13 @@ export_presets.cfg
 .godot/editor/favorites.Node
 
 .godot/editor/favorites
+
+.godot/editor/filesystem_update4
+
+.godot/editor/create_recent.Node
+
+*.cfg
+
+.godot/editor/recent_dirs
+
+.godot/editor/

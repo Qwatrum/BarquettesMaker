@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://47rqsdnj81ne"]
+[gd_scene load_steps=9 format=3 uid="uid://47rqsdnj81ne"]
 
+[ext_resource type="Script" path="res://scenes/inside.gd" id="1_2qq1h"]
 [ext_resource type="Texture2D" uid="uid://bh4480773l31w" path="res://assets/inside-c.png" id="1_qxv6c"]
 [ext_resource type="Texture2D" uid="uid://cjbgxvpohigdi" path="res://assets/inside_b.png" id="2_6iov7"]
 [ext_resource type="Texture2D" uid="uid://c5aneya6vwwb8" path="res://assets/inside_pe.png" id="3_v0xdi"]
@@ -35,6 +36,8 @@ animations = [{
 
 [node name="inside" type="Node2D"]
 z_index = 2
+scale = Vector2(5, 5)
+script = ExtResource("1_2qq1h")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

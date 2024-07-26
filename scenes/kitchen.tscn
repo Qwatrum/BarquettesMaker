@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://ccbcv06obavin"]
+[gd_scene load_steps=17 format=3 uid="uid://ccbcv06obavin"]
 
 [ext_resource type="Script" path="res://scenes/kitchen.gd" id="1_2d51u"]
 [ext_resource type="Texture2D" uid="uid://b5agcaprp5ukk" path="res://assets/Background.png" id="1_qw3v2"]
 [ext_resource type="Texture2D" uid="uid://ogyqna52omje" path="res://assets/shelf.png" id="2_73gpo"]
 [ext_resource type="Texture2D" uid="uid://cyvwv4acerh0" path="res://assets/table.png" id="3_lk741"]
 [ext_resource type="Texture2D" uid="uid://dkb7egfu4ahwg" path="res://assets/text.png" id="4_0c1yu"]
+[ext_resource type="Texture2D" uid="uid://bsd4xemw2kyrk" path="res://assets/tablet.png" id="5_onqcl"]
 [ext_resource type="Texture2D" uid="uid://di7u7p8bykfuu" path="res://assets/bowl_s.png" id="6_hnvb7"]
 [ext_resource type="PackedScene" uid="uid://cbp00el2rngwc" path="res://scenes/jar_strawberry.tscn" id="7_xlboq"]
 [ext_resource type="PackedScene" uid="uid://bt504crafw2lc" path="res://scenes/jar_blue.tscn" id="8_u1lpo"]
@@ -12,6 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://cn5fah2ffm3xn" path="res://scenes/jar_peach.tscn" id="10_bv8o1"]
 [ext_resource type="PackedScene" uid="uid://hghrsdhala0s" path="res://scenes/jar_choc.tscn" id="11_py71x"]
 [ext_resource type="PackedScene" uid="uid://di5vnb6330uvk" path="res://scenes/jar_peanut.tscn" id="12_n6n1j"]
+[ext_resource type="PackedScene" uid="uid://khbj715rw3y5" path="res://scenes/dispenser_0.tscn" id="13_4r3bc"]
+[ext_resource type="PackedScene" uid="uid://c1iasmxstfvro" path="res://scenes/dispenser_1.tscn" id="14_2ttbf"]
+[ext_resource type="PackedScene" uid="uid://chiayr5yxcb17" path="res://scenes/dispenser_2.tscn" id="15_6rdqn"]
 
 [node name="Kitchen" type="Control"]
 layout_mode = 3
@@ -20,6 +24,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_2d51u")
 
 [node name="Background" type="TextureRect" parent="."]
@@ -30,6 +35,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 texture = ExtResource("1_qw3v2")
 stretch_mode = 1
 
@@ -45,7 +51,14 @@ position = Vector2(604, 566.875)
 scale = Vector2(10.0313, 4.11133)
 texture = ExtResource("3_lk741")
 
+[node name="Tablet" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(576, 550)
+scale = Vector2(6, 4)
+texture = ExtResource("5_onqcl")
+
 [node name="Table_btn" type="TextureButton" parent="."]
+visible = false
 texture_filter = 1
 layout_mode = 0
 offset_left = -68.0
@@ -56,6 +69,7 @@ scale = Vector2(10, 4)
 texture_normal = ExtResource("3_lk741")
 
 [node name="Text" type="Sprite2D" parent="."]
+visible = false
 texture_filter = 1
 position = Vector2(550, 485)
 scale = Vector2(7, 7)
@@ -84,5 +98,14 @@ position = Vector2(235, 157)
 
 [node name="Jar_peanut" parent="." instance=ExtResource("12_n6n1j")]
 position = Vector2(279, 156)
+
+[node name="Dispenser_0" parent="." instance=ExtResource("13_4r3bc")]
+position = Vector2(132, 238)
+
+[node name="Dispenser_1" parent="." instance=ExtResource("14_2ttbf")]
+position = Vector2(173, 239)
+
+[node name="Dispenser_2" parent="." instance=ExtResource("15_6rdqn")]
+position = Vector2(209, 241)
 
 [connection signal="button_down" from="Table_btn" to="." method="_on_table_btn_button_down"]

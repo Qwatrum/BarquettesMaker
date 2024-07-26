@@ -1,19 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://di5vnb6330uvk"]
+[gd_scene load_steps=4 format=3 uid="uid://di5vnb6330uvk"]
 
 [ext_resource type="Texture2D" uid="uid://cr484lk1qamio" path="res://assets/jar_pean.png" id="1_kfgki"]
+[ext_resource type="Script" path="res://scenes/jar_peanut.gd" id="1_q18pm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dvecf"]
 size = Vector2(34, 53)
 
-[node name="Jar_peanut" type="Node2D"]
+[node name="Jar_peanut" type="StaticBody2D"]
+input_pickable = true
+script = ExtResource("1_q18pm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_kfgki")
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_dvecf")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

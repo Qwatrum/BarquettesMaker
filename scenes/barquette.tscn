@@ -1,10 +1,32 @@
-[gd_scene load_steps=2 format=3 uid="uid://di5nxhn44hng6"]
+[gd_scene load_steps=6 format=3 uid="uid://di5nxhn44hng6"]
 
+[ext_resource type="Script" path="res://scenes/barquette.gd" id="1_gn3t7"]
 [ext_resource type="Texture2D" uid="uid://cdf4fqeyccfhh" path="res://assets/barquettes1.png" id="1_wwmse"]
+[ext_resource type="Texture2D" uid="uid://c7puvuexyc4no" path="res://assets/barquette0.png" id="2_sxpqv"]
+[ext_resource type="Texture2D" uid="uid://bwckvftgqr36l" path="res://assets/barquettes2.png" id="4_pesxn"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b8vic"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_sxpqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_wwmse")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pesxn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="barquette" type="Node2D"]
 z_index = 1
+scale = Vector2(5, 5)
+script = ExtResource("1_gn3t7")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("1_wwmse")
+sprite_frames = SubResource("SpriteFrames_b8vic")

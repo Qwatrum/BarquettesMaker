@@ -3,18 +3,19 @@
 [ext_resource type="Texture2D" uid="uid://cw5ni63b1imlm" path="res://assets/strawberry_jar.png" id="1_rkjmu"]
 [ext_resource type="Script" path="res://scenes/jar_strawberry.gd" id="1_t8frh"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dvecf"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mrrdc"]
 size = Vector2(34, 53)
 
-[node name="Jar_strawberry" type="Node2D"]
+[node name="Jar_strawberry" type="StaticBody2D"]
+input_pickable = true
 script = ExtResource("1_t8frh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 texture = ExtResource("1_rkjmu")
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_dvecf")
+shape = SubResource("RectangleShape2D_mrrdc")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
