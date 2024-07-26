@@ -6,63 +6,11 @@ export_presets.cfg
 
 # Mono-specific ignores
 .mono/
+.godot/imported/
+.godot/shader_cache/
 
 .godot/editor/filesystem_cache8
 
 .godot/editor/project_metadata.cfg
 
-.godot/global_script_class_cache.cfg
-
-.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex
-
-.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.md5
-
-.godot/shader_cache/CanvasShaderGLES3/3dcb45256ed815215fd3115afa915419d31aaa2de205c94a682ae402170442aa/6bb7c9a2fd1c4a8fa77cb96555b9b4a720209981.cache
-
-.godot/shader_cache/CopyShaderGLES3/332c26043528add88d03ff3f681b4f5862a6432bf250ccf0f680ee289ba63ec3/6bb7c9a2fd1c4a8fa77cb96555b9b4a720209981.cache
-
-.godot/shader_cache/CubemapFilterShaderGLES3/8af792a18ecd13423a2b035e4856fb43a7fac5dbc42c7dbd51f5e021e314fe48/6bb7c9a2fd1c4a8fa77cb96555b9b4a720209981.cache
-
-.godot/shader_cache/SceneShaderGLES3/d61e39adf5ec80cd86469c3488c82127a3110fad4e7be6105c2cd4189a609048/1d8c2052056880002b21f942081ab902b6599591.cache
-
-.godot/shader_cache/SceneShaderGLES3/d61e39adf5ec80cd86469c3488c82127a3110fad4e7be6105c2cd4189a609048/6bb7c9a2fd1c4a8fa77cb96555b9b4a720209981.cache
-
-.godot/shader_cache/SceneShaderGLES3/d61e39adf5ec80cd86469c3488c82127a3110fad4e7be6105c2cd4189a609048/759922d24d18f6e93947155d0345545f9941ad7c.cache
-
-.godot/shader_cache/SkyShaderGLES3/2fe6fac089654531cde16608b83453a0d64f69d5c28ab83c1902fb055eeb569b/326815bf28d368ee4b1580f2510139a11da0b398.cache
-
-.godot/editor/script_editor_cache.cfg
-
 .godot/uid_cache.bin
-
-.godot/imported/barquette0.png-afa5ecca2ec992a7d6c2a56122ad5021.ctex
-
-.godot/imported/barquette0.png-afa5ecca2ec992a7d6c2a56122ad5021.md5
-
-.godot/imported/barquettes1.png-488576dbc0e7d9f2df4201cd35e25bad.ctex
-
-.godot/imported/barquettes1.png-488576dbc0e7d9f2df4201cd35e25bad.md5
-
-.godot/imported/barquettes2.png-30e8d1a5c7c160ff323732b7859b9cce.ctex
-
-.godot/imported/barquettes2.png-30e8d1a5c7c160ff323732b7859b9cce.md5
-
-.godot/imported/choc_jar.png-9ff0f451c86b0b303e961f9b21f7075f.ctex
-
-.godot/imported/choc_jar.png-9ff0f451c86b0b303e961f9b21f7075f.md5
-
-.godot/imported/peach_jar.png-8911a8acec42971c34d798e577d43eec.ctex
-
-.godot/imported/peach_jar.png-8911a8acec42971c34d798e577d43eec.md5
-
-.godot/imported/pistachios.png-ec3a6c2dc63102c1cf4803f2e5b6ae28.ctex
-
-.godot/imported/pistachios.png-ec3a6c2dc63102c1cf4803f2e5b6ae28.md5
-
-.godot/imported/strawberry_jar.png-cb187caa4a17b77b7c860b5160acf8a4.ctex
-
-.godot/imported/strawberry_jar.png-cb187caa4a17b77b7c860b5160acf8a4.md5
-
-.godot/imported/tablet.png-786c8549a46552c8b867a0833b2eeaa6.ctex
-
-.godot/imported/tablet.png-786c8549a46552c8b867a0833b2eeaa6.md5
