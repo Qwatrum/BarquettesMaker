@@ -1,6 +1,6 @@
 # Barquettes Maker
 - A small game where you can make your own barquettes
-- [Play on Itch.io](http:// "Itch.io")
+- [Play on Itch.io](https://qwatrum.itch.io/barquettes-maker "Itch.io")
 
 ### About:
 - A barquette is a french food.
