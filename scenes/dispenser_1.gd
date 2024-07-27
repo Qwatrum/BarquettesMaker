@@ -10,3 +10,4 @@ func _on_input_event(viewport, event, shape_idx):
 			var inste = barquette.instantiate()
 			GameNode.add_child(inste)
 			inste.frame(1)
+			GameNode.append_children(inste)

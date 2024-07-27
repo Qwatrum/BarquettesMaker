@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfi80gfoqdvar"]
+
+[ext_resource type="Script" path="res://scenes/topping_p.gd" id="1_n0b82"]
+[ext_resource type="Texture2D" uid="uid://dk1a6lcrru2wg" path="res://assets/pistachios.png" id="1_wrd5f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nos7x"]
+size = Vector2(113, 162)
+
+[node name="topping_p" type="StaticBody2D"]
+scale = Vector2(0.5, 0.5)
+input_pickable = true
+script = ExtResource("1_n0b82")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_wrd5f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 21)
+shape = SubResource("RectangleShape2D_nos7x")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

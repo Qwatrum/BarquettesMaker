@@ -1,7 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://ccbcv06obavin"]
+[gd_scene load_steps=22 format=3 uid="uid://ccbcv06obavin"]
 
 [ext_resource type="Script" path="res://scenes/kitchen.gd" id="1_2d51u"]
-[ext_resource type="Texture2D" uid="uid://b5agcaprp5ukk" path="res://assets/Background.png" id="1_qw3v2"]
+[ext_resource type="Texture2D" uid="uid://dhltrvb7cykfr" path="res://assets/Background2.png" id="2_7hx52"]
 [ext_resource type="Texture2D" uid="uid://ogyqna52omje" path="res://assets/shelf.png" id="2_73gpo"]
 [ext_resource type="Texture2D" uid="uid://cyvwv4acerh0" path="res://assets/table.png" id="3_lk741"]
 [ext_resource type="Texture2D" uid="uid://dkb7egfu4ahwg" path="res://assets/text.png" id="4_0c1yu"]
@@ -16,6 +16,11 @@
 [ext_resource type="PackedScene" uid="uid://khbj715rw3y5" path="res://scenes/dispenser_0.tscn" id="13_4r3bc"]
 [ext_resource type="PackedScene" uid="uid://c1iasmxstfvro" path="res://scenes/dispenser_1.tscn" id="14_2ttbf"]
 [ext_resource type="PackedScene" uid="uid://chiayr5yxcb17" path="res://scenes/dispenser_2.tscn" id="15_6rdqn"]
+[ext_resource type="PackedScene" uid="uid://bn5jswtjkkp5t" path="res://scenes/toppings_n.tscn" id="17_mcu7v"]
+[ext_resource type="PackedScene" uid="uid://cfi80gfoqdvar" path="res://scenes/topping_p.tscn" id="18_e5hu6"]
+[ext_resource type="Texture2D" uid="uid://di2ryuc2f0fs1" path="res://assets/finished_btn.png" id="19_k38kb"]
+[ext_resource type="Texture2D" uid="uid://cj3sjmji0upcf" path="res://assets/removed_btn.png" id="20_wm04w"]
+[ext_resource type="Texture2D" uid="uid://bfytn643thv5h" path="res://assets/radio.png" id="21_pp50r"]
 
 [node name="Kitchen" type="Control"]
 layout_mode = 3
@@ -36,7 +41,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("1_qw3v2")
+texture = ExtResource("2_7hx52")
 stretch_mode = 1
 
 [node name="Shelf" type="Sprite2D" parent="."]
@@ -58,7 +63,6 @@ scale = Vector2(6, 4)
 texture = ExtResource("5_onqcl")
 
 [node name="Table_btn" type="TextureButton" parent="."]
-visible = false
 texture_filter = 1
 layout_mode = 0
 offset_left = -68.0
@@ -69,16 +73,14 @@ scale = Vector2(10, 4)
 texture_normal = ExtResource("3_lk741")
 
 [node name="Text" type="Sprite2D" parent="."]
-visible = false
 texture_filter = 1
 position = Vector2(550, 485)
 scale = Vector2(7, 7)
 texture = ExtResource("4_0c1yu")
 
 [node name="Bowl" type="Sprite2D" parent="."]
-visible = false
 texture_filter = 1
-position = Vector2(60, 255)
+position = Vector2(264, 72)
 texture = ExtResource("6_hnvb7")
 
 [node name="Jar_strawberry" parent="." instance=ExtResource("7_xlboq")]
@@ -100,12 +102,46 @@ position = Vector2(235, 157)
 position = Vector2(279, 156)
 
 [node name="Dispenser_0" parent="." instance=ExtResource("13_4r3bc")]
-position = Vector2(132, 238)
+position = Vector2(67, 240)
 
 [node name="Dispenser_1" parent="." instance=ExtResource("14_2ttbf")]
-position = Vector2(173, 239)
+position = Vector2(121, 241)
 
 [node name="Dispenser_2" parent="." instance=ExtResource("15_6rdqn")]
-position = Vector2(209, 241)
+position = Vector2(167, 242)
+
+[node name="toppings_n" parent="." instance=ExtResource("17_mcu7v")]
+position = Vector2(68, 63)
+
+[node name="topping_p" parent="." instance=ExtResource("18_e5hu6")]
+position = Vector2(151, 45)
+
+[node name="Finish_btn" type="TextureButton" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 887.0
+offset_top = 540.0
+offset_right = 938.0
+offset_bottom = 561.0
+scale = Vector2(5, 5)
+texture_normal = ExtResource("19_k38kb")
+
+[node name="Remove_btn" type="TextureButton" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = 6.0
+offset_top = 581.0
+offset_right = 57.0
+offset_bottom = 602.0
+scale = Vector2(3, 3)
+texture_normal = ExtResource("20_wm04w")
+
+[node name="Radio" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(249, 243)
+scale = Vector2(2, 2)
+texture = ExtResource("21_pp50r")
 
 [connection signal="button_down" from="Table_btn" to="." method="_on_table_btn_button_down"]
+[connection signal="button_down" from="Finish_btn" to="." method="_on_finish_btn_button_down"]
+[connection signal="button_down" from="Remove_btn" to="." method="_on_remove_btn_button_down"]

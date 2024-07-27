@@ -1,12 +1,21 @@
 extends Control
 
-var elements = []
+var elements = ["barquette", "inside", "topping"]
+var nodes = []
+
+
+func _ready():
+	$"Remove_btn".hide()
+	$"Finish_btn".hide()
+	$"Table_btn".show()
+	$"Text".show()
 
 
 func _on_table_btn_button_down():
 	$"Table".show()
 	$"Table_btn".hide()
 	$"Text".hide()
+	elements = []
 
 func is_valid(el):
 	if el == "barquette":
@@ -14,6 +23,8 @@ func is_valid(el):
 			return false
 		else:
 			elements.append(el)
+			$"Remove_btn".show()
+			$"Finish_btn".show()
 			return true
 			
 	
@@ -37,3 +48,31 @@ func is_valid(el):
 		else:
 			return false
 	
+
+
+func _on_finish_btn_button_down():
+	$"Remove_btn".hide()
+	$"Finish_btn".hide()
+	await get_tree().create_timer(2).timeout
+	clear()
+	$"Text".show()
+	$"Table_btn".show()
+
+
+func _on_remove_btn_button_down():
+	elements = []
+	$"Remove_btn".hide()
+	$"Finish_btn".hide()
+	
+	clear()
+	
+
+func clear():
+	for e in nodes:
+		e.queue_free()
+	
+	nodes = []
+	
+
+func append_children(child):
+	nodes.append(child)
