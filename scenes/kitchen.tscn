@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ccbcv06obavin"]
+[gd_scene load_steps=23 format=3 uid="uid://ccbcv06obavin"]
 
 [ext_resource type="Script" path="res://scenes/kitchen.gd" id="1_2d51u"]
 [ext_resource type="Texture2D" uid="uid://dhltrvb7cykfr" path="res://assets/Background2.png" id="2_7hx52"]
@@ -20,7 +20,8 @@
 [ext_resource type="PackedScene" uid="uid://cfi80gfoqdvar" path="res://scenes/topping_p.tscn" id="18_e5hu6"]
 [ext_resource type="Texture2D" uid="uid://di2ryuc2f0fs1" path="res://assets/finished_btn.png" id="19_k38kb"]
 [ext_resource type="Texture2D" uid="uid://cj3sjmji0upcf" path="res://assets/removed_btn.png" id="20_wm04w"]
-[ext_resource type="Texture2D" uid="uid://bfytn643thv5h" path="res://assets/radio.png" id="21_pp50r"]
+[ext_resource type="PackedScene" uid="uid://cfd5yvo0r8m8x" path="res://scenes/radio.tscn" id="22_0rbd5"]
+[ext_resource type="AudioStream" uid="uid://beo52qh7t4er6" path="res://music/song.mp3" id="22_ucb2l"]
 
 [node name="Kitchen" type="Control"]
 layout_mode = 3
@@ -46,7 +47,7 @@ stretch_mode = 1
 
 [node name="Shelf" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(170, 174)
+position = Vector2(171, 174)
 scale = Vector2(2.8, 2.8)
 texture = ExtResource("2_73gpo")
 
@@ -119,28 +120,28 @@ position = Vector2(151, 45)
 [node name="Finish_btn" type="TextureButton" parent="."]
 texture_filter = 1
 layout_mode = 0
-offset_left = 887.0
-offset_top = 540.0
-offset_right = 938.0
-offset_bottom = 561.0
+offset_left = 873.0
+offset_top = 521.0
+offset_right = 924.0
+offset_bottom = 542.0
 scale = Vector2(5, 5)
 texture_normal = ExtResource("19_k38kb")
 
 [node name="Remove_btn" type="TextureButton" parent="."]
 texture_filter = 1
 layout_mode = 0
-offset_left = 6.0
-offset_top = 581.0
-offset_right = 57.0
-offset_bottom = 602.0
+offset_left = 14.0
+offset_top = 571.0
+offset_right = 65.0
+offset_bottom = 592.0
 scale = Vector2(3, 3)
 texture_normal = ExtResource("20_wm04w")
 
-[node name="Radio" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(249, 243)
-scale = Vector2(2, 2)
-texture = ExtResource("21_pp50r")
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_ucb2l")
+
+[node name="Radio" parent="." instance=ExtResource("22_0rbd5")]
+position = Vector2(246, 240)
 
 [connection signal="button_down" from="Table_btn" to="." method="_on_table_btn_button_down"]
 [connection signal="button_down" from="Finish_btn" to="." method="_on_finish_btn_button_down"]

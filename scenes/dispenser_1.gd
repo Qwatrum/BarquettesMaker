@@ -1,4 +1,5 @@
 extends StaticBody2D
+
 @onready var GameNode := get_parent()
 var barquette = preload("res://scenes/barquette.tscn")
 

@@ -5,6 +5,7 @@ var nodes = []
 
 
 func _ready():
+	$"AudioStreamPlayer".playing = true
 	$"Remove_btn".hide()
 	$"Finish_btn".hide()
 	$"Table_btn".show()
@@ -76,3 +77,6 @@ func clear():
 
 func append_children(child):
 	nodes.append(child)
+
+func music():
+	$"AudioStreamPlayer".playing = not $"AudioStreamPlayer".playing
