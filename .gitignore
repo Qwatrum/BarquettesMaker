@@ -1,4 +1,4 @@
-
+.godot/
 # Godot-specific ignores
 .import/
 export.cfg
@@ -6,27 +6,5 @@ export_presets.cfg
 
 # Mono-specific ignores
 .mono/
-.godot/imported/
-.godot/shader_cache/
-
-.godot/editor/filesystem_cache8
-
-.godot/editor/project_metadata.cfg
-
-.godot/uid_cache.bin
-
-.godot/editor/editor_layout.cfg
-
-.godot/editor/favorites.Node
-
-.godot/editor/favorites
-
-.godot/editor/filesystem_update4
-
-.godot/editor/create_recent.Node
 
 *.cfg
-
-.godot/editor/recent_dirs
-
-.godot/editor/
